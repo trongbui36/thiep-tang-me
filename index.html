@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gửi Mẹ Yêu Thương - 20/10</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0; padding: 0;
+      background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%);
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: Arial, sans-serif;
+      overflow: hidden;
+    }
+    .card {
+      background: rgba(255, 255, 255, 0.95);
+      padding: 25px 20px;
+      border-radius: 20px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+      text-align: center;
+      max-width: 88%;
+      z-index: 10;
+      will-change: transform, opacity;
+      animation: pop 0.8s ease-out forwards;
+    }
+    .img-box {
+      width: 100%;
+      max-width: 260px;
+      height: auto;
+      border-radius: 15px;
+      border: 4px solid #ff80ab;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      margin: 12px 0;
+      object-fit: cover;
+    }
+    @keyframes pop {
+      0% { transform: scale(0.8); opacity: 0; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+    h1 {
+      color: #e91e63;
+      font-size: 22px;
+      margin-bottom: 8px;
+    }
+    p {
+      color: #333;
+      font-size: 15px;
+      line-height: 1.5;
+      margin-bottom: 10px;
+    }
+    .rhyme {
+      color: #e91e63;
+      font-weight: bold;
+      font-size: 15px;
+      background: #ffe4e8;
+      padding: 10px;
+      border-radius: 12px;
+      margin: 10px 0;
+    }
+    .highlight {
+      color: #d81b60;
+      font-weight: bold;
+      margin-top: 12px;
+    }
+    /* Tối ưu hiệu ứng hoa rơi mượt mà hơn */
+    .petal {
+      position: fixed;
+      top: -20px;
+      user-select: none;
+      pointer-events: none;
+      will-change: transform;
+      animation: fall linear forwards;
+    }
+    @keyframes fall {
+      0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+      90% { opacity: 1; }
+      100% { transform: translateY(105vh) rotate(360deg); opacity: 0; }
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>🌷 CHÚC MỪNG NGÀY 20/10 🌷</h1>
+    <img src="https://cdn.phototourl.com/member/2026-10-09-9442790c-9472-490a-a116-1dbdfd515981.jpg" class="img-box" alt="Ảnh tặng Mẹ">
+    <p>Gửi Mẹ,</p>
+    <div class="rhyme">Chúc Mẹ phơi phới tuổi xuân,<br>Càng thêm tươi trẻ, muôn phần an nhiên! ✨🌸</div>
+    <p>Trân trọng!</p>
+    <p class="highlight">❤️ Love! Love! ❤️</p>
+  </div>
+  <script>
+    function createPetal() {
+      const petal = document.createElement('div');
+      petal.classList.add('petal');
+      const icons = ['🌸', '🌺', '🌷', '✨', '❤️'];
+      petal.innerText = icons[Math.floor(Math.random() * icons.length)];
+      petal.style.left = Math.random() * 95 + 'vw';
+      const duration = Math.random() * 3 + 4;
+      petal.style.animationDuration = duration + 's';
+      petal.style.fontSize = Math.random() * 8 + 14 + 'px';
+      document.body.appendChild(petal);
+      setTimeout(() => { petal.remove(); }, duration * 1000);
+    }
+    setInterval(createPetal, 450);
+  </script>
+</body>
+</html>
